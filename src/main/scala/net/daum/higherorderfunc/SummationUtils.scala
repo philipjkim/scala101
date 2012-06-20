@@ -7,8 +7,8 @@ object SummationUtils {
 
   def powerOfTwo(x: Int): Int = if (x == 0) 1 else 2 * powerOfTwo(x - 1)
 
-  def sumInts(a: Int, b: Int): Int = sum((x: Int) => x, a, b)
-  def sumSquares(a: Int, b: Int): Int = sum((x: Int) => x * x, a, b)
+  def sumInts(a: Int, b: Int): Int = sum(x => x, a, b)
+  def sumSquares(a: Int, b: Int): Int = sum(x => x * x, a, b)
   def sumPowerOfTwo(a: Int, b: Int): Int = sum(powerOfTwo, a, b)
 }
 
