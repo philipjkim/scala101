@@ -1,6 +1,6 @@
-package net.daum
+package net.daum.sort
 
-class Sorter {
+object Sorter {
 
   def imperativeQuicksort(xs: Array[Int]) {
     def swap(i: Int, j: Int) {
@@ -35,4 +35,17 @@ class Sorter {
         functionalQuicksort(xs filter (pivot <)))
     }
   }
+}
+
+object SorterRunner extends App {
+  val array = Array(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+
+  println("Before functionalQuicksort:     %s".format(array.deep))
+  val sorted = Sorter.functionalQuicksort(array)
+  println("After functionalQuicksort:      %s".format(array.deep))
+  println("Return of functionalQuicksort:  %s".format(sorted.deep))
+
+  println("Before imperativeQuicksort:     %s".format(array.deep))
+  Sorter.imperativeQuicksort(array)
+  println("After imperativeQuicksort:      %s".format(array.deep))
 }
