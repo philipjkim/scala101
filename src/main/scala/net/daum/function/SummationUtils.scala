@@ -1,4 +1,4 @@
-package net.daum.higherorderfunc
+package net.daum.function
 
 object SummationUtils {
 

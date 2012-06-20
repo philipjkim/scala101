@@ -1,4 +1,5 @@
-package net.daum.higherorderfunc
+package net.daum.function
+
 import org.specs2.mutable.Specification
 import org.junit.runner.RunWith
 import org.specs2.runner.JUnitRunner
