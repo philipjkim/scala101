@@ -2,14 +2,17 @@ package net.daum.higherorderfunc
 
 object SummationUtils {
 
-  def sum(f: Int => Int, a: Int, b: Int): Int =
-    if (a > b) 0 else f(a) + sum(f, a + 1, b)
+  def sum(f: Int => Int): (Int, Int) => Int = {
+    def sumF(a: Int, b: Int): Int =
+      if (a > b) 0 else f(a) + sumF(a + 1, b)
+    sumF
+  }
 
   def powerOfTwo(x: Int): Int = if (x == 0) 1 else 2 * powerOfTwo(x - 1)
 
-  def sumInts(a: Int, b: Int): Int = sum(x => x, a, b)
-  def sumSquares(a: Int, b: Int): Int = sum(x => x * x, a, b)
-  def sumPowerOfTwo(a: Int, b: Int): Int = sum(powerOfTwo, a, b)
+  def sumInts = sum(x => x)
+  def sumSquares = sum(x => x * x)
+  def sumPowerOfTwo = sum(powerOfTwo)
 }
 
 object SummationUtilsRunner extends App {
