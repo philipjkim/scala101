@@ -5,12 +5,10 @@ object SummationUtils {
   def sum(f: Int => Int, a: Int, b: Int): Int =
     if (a > b) 0 else f(a) + sum(f, a + 1, b)
 
-  def id(x: Int) = x
-  def square(x: Int) = x * x
   def powerOfTwo(x: Int): Int = if (x == 0) 1 else 2 * powerOfTwo(x - 1)
 
-  def sumInts(a: Int, b: Int): Int = sum(id, a, b)
-  def sumSquares(a: Int, b: Int): Int = sum(square, a, b)
+  def sumInts(a: Int, b: Int): Int = sum((x: Int) => x, a, b)
+  def sumSquares(a: Int, b: Int): Int = sum((x: Int) => x * x, a, b)
   def sumPowerOfTwo(a: Int, b: Int): Int = sum(powerOfTwo, a, b)
 }
 
