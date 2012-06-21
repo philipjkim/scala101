@@ -1,4 +1,4 @@
-package net.daum.function
+package net.daum.ch05
 
 import org.specs2.mutable.Specification
 import org.junit.runner.RunWith

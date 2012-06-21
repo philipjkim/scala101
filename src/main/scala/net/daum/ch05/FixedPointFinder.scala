@@ -1,4 +1,4 @@
-package net.daum.function
+package net.daum.ch05
 
 object FixedPointFinder {
 

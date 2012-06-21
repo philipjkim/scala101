@@ -1,4 +1,4 @@
-package net.daum.sort
+package net.daum.ch02
 
 object Sorter {
 

@@ -1,4 +1,4 @@
-package net.daum.recursion
+package net.daum.ch04
 
 object RecursionUtils {
   def sqrt(x: Double) = {

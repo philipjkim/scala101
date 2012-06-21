@@ -1,4 +1,4 @@
-package net.daum.auction
+package net.daum.ch03
 import java.util.Date
 
 import scala.actors.Actor
