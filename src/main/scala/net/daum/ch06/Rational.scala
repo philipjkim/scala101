@@ -19,6 +19,7 @@ class Rational(n: Int, d: Int) {
     new Rational(numer * that.numer, denom * that.denom)
   def /(that: Rational) =
     new Rational(numer * that.denom, denom * that.numer)
+  override def toString = "%d/%d".format(numer, denom)
 }
 
 object RationalRunner extends App {
@@ -28,5 +29,5 @@ object RationalRunner extends App {
     x += new Rational(1, i)
     i += 1
   }
-  println("%d/%d".format(x.numer, x.denom))
+  println(x)
 }
