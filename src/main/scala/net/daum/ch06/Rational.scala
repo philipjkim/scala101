@@ -20,6 +20,7 @@ class Rational(n: Int, d: Int) {
   def /(that: Rational) =
     new Rational(numer * that.denom, denom * that.numer)
   override def toString = "%d/%d".format(numer, denom)
+  def square = new Rational(numer * numer, denom * denom)
 }
 
 object RationalRunner extends App {
@@ -30,4 +31,5 @@ object RationalRunner extends App {
     i += 1
   }
   println(x)
+  println(new Rational(3, 4).square)
 }
