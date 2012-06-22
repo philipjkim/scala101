@@ -6,29 +6,26 @@ import org.specs2.runner.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class ExprSpec extends Specification {
 
-  "Number.toStr" should {
-    "return a number as String" in {
-      new Number(3).toStr must equalTo("3")
+  "Number.toString" should {
+    "return 'Number(n)'" in {
+      Number(3).toString must equalTo("Number(3)")
     }
   }
 
-  "Sum.toStr" should {
-    "return a string of (e1 + e2)" in {
-      val n1 = new Number(3);
-      val n2 = new Number(5);
-      val sum = new Sum(n1, n2);
-      sum.toStr must equalTo("(3 + 5)")
+  "Sum.toString" should {
+    "return 'Sum(e1.toString, e2.toString)'" in {
+      val sum = Sum(Number(3), Number(5))
+      sum.toString must equalTo("Sum(Number(3),Number(5))")
     }
   }
 
-  "Prod.toStr" should {
-    "return a string of (e1 * e2)" in {
-      val n1 = new Number(3);
-      val n2 = new Number(5);
-      val sum1 = new Sum(n1, n2)
-      val sum2 = new Sum(n2, n1)
-      val prod = new Prod(sum1, sum2);
-      prod.toStr must equalTo("((3 + 5) * (5 + 3))")
+  "Prod.toString" should {
+    "return 'Prod(e1.toString, e2.toString)'" in {
+      val sum1 = Sum(Number(3), Number(5))
+      val sum2 = Sum(Number(5), Number(3))
+      val prod = Prod(sum1, sum2);
+      prod.toString must equalTo("Prod(Sum(Number(3),Number(5)),Sum(Number(5),Number(3)))")
     }
   }
+
 }
