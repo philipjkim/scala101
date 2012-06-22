@@ -5,6 +5,10 @@ abstract class Stack[A] {
   def isEmpty: Boolean
   def top: A
   def pop: Stack[A]
+  def isPrefixOf(s: Stack[A]): Boolean = {
+    this.isEmpty ||
+      this.top == s.top && this.pop.isPrefixOf(s.pop)
+  }
 }
 class EmptyStack[A] extends Stack[A] {
   def isEmpty = true

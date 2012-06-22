@@ -24,5 +24,9 @@ class StackSpec extends Specification {
     "return 'first' when stack.pop.top called" in {
       stack.pop.top must equalTo("first")
     }
+    "be a prefix of stack['zero', 'first', 'second']" in {
+      val stack2 = emptyStack.push("zero").push("first").push("second")
+      stack.isPrefixOf(stack2) must equalTo(true)
+    }
   }
 }
