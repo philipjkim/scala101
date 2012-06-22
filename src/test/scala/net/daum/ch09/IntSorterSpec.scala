@@ -7,9 +7,16 @@ import org.specs2.mutable.Specification
 class IntSorterSpec extends Specification {
 
   "IntSorter.isort" should {
-    "return a sorted list from an unsorted list" in {
+    "return a sorted list from an unsorted list using insertion sort" in {
       val unsorted = List(5, 3, 4, 1, 2)
       IntSorter.isort(unsorted) must equalTo(List(1, 2, 3, 4, 5))
+    }
+  }
+
+  "IntSorter.msort" should {
+    "return a sorted list from an unsorted list using merge sort" in {
+      val unsorted = List(5, 3, 4, 1, 2)
+      IntSorter.msort(unsorted) must equalTo(List(1, 2, 3, 4, 5))
     }
   }
 }
