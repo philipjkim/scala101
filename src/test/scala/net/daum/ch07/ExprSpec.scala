@@ -25,8 +25,10 @@ class ExprSpec extends Specification {
     "return a string of (e1 * e2)" in {
       val n1 = new Number(3);
       val n2 = new Number(5);
-      val prod = new Prod(n1, n2);
-      prod.toStr must equalTo("(3 * 5)")
+      val sum1 = new Sum(n1, n2)
+      val sum2 = new Sum(n2, n1)
+      val prod = new Prod(sum1, sum2);
+      prod.toStr must equalTo("((3 + 5) * (5 + 3))")
     }
   }
 }
