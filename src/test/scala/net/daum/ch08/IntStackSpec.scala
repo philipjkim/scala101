@@ -11,14 +11,12 @@ class IntStackSpec extends Specification {
     "be empty" in {
       s.isEmpty must equalTo(true)
     }
-    /* TODO
     "raise error when top called" in {
       s.top must throwA[RuntimeException]
     }
     "raise error when pop called" in {
       s.pop must throwA[RuntimeException]
     }
-     */
   }
 
   "IntNonEmptyStack[elem, rest]" should {

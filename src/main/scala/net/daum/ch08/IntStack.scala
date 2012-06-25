@@ -8,8 +8,8 @@ abstract class IntStack {
 }
 class IntEmptyStack extends IntStack {
   def isEmpty = true
-  def top = sys.error("EmptyStack.top")
-  def pop = sys.error("EmptyStack.pop")
+  def top: Int = sys.error("EmptyStack.top")
+  def pop: IntStack = sys.error("EmptyStack.pop")
 }
 class IntNonEmptyStack(elem: Int, rest: IntStack) extends IntStack {
   def isEmpty = false
