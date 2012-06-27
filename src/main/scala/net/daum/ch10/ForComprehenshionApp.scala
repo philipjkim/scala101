@@ -38,6 +38,10 @@ object ForComprehenshionApp extends App {
     Book("Scala for the Impatient", List("Cay Horstmann")),
     Book("Scala in Depth", List("Joshua D. Suereth")),
     Book("Programming Scala", List("Alex Payne", "Dean Wampler")))
-  println(for (b <- books; a <- b.authors if a startsWith "Martin") yield b.title)
-  println(for (b <- books if (b.title indexOf "Program") >= 0) yield b.title)
+  val title1 = for (b <- books; a <- b.authors if a startsWith "Martin") yield b.title
+  val title1a = books.filter(b => b.authors.filter(_ startsWith "Martin").length > 0).map(b => b.title)
+  assert(title1 == title1a)
+  val title2 = for (b <- books if (b.title indexOf "Program") >= 0) yield b.title
+  val title2a = books.map(b => b.title).filter(_ contains "Program")
+  assert(title2 == title2a)
 }
