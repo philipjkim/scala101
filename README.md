@@ -12,3 +12,5 @@ Example codes in [Scala By Example](http://www.scala-lang.org/docu/files/ScalaBy
 - http://metagear.de/articles/scala-exercises/index.html
 
 - https://bitbucket.org/dwijnand/prog-in-scala-examples-2ed/src/3220f54780d4/stateful-objects/Simulator2.scala
+
+- http://www.scala-lang.org/node/130
